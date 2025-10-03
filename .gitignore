@@ -20,3 +20,6 @@ dist/
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Node.js
+node_modules/

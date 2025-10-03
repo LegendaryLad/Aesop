@@ -6,6 +6,7 @@ This module contains the fundamental game mechanics:
 - Player state and inventory management  
 - Room management
 - State tracking and transactions
+- Event history and persistence
 """
 
 from .game_objects import (
@@ -19,12 +20,21 @@ from .game_objects import (
     INVENTORY_LIMITS
 )
 
-# Will add as we build
-# from .game_state import GameState
-# from .history import EventHistory
-# from .validation import StateValidator
+from .game_state import (
+    GameState,
+    StateChange,
+    ChangeType,
+    ValidationLevel,
+    ValidationResult
+)
+
+from .history import (
+    EventHistory,
+    GameEvent
+)
 
 __all__ = [
+    # Game Objects
     "GameObject",
     "Player",
     "Room", 
@@ -33,4 +43,15 @@ __all__ = [
     "InventoryType",
     "InventoryCapacity",
     "INVENTORY_LIMITS",
+    
+    # Game State
+    "GameState",
+    "StateChange",
+    "ChangeType",
+    "ValidationLevel",
+    "ValidationResult",
+    
+    # History
+    "EventHistory",
+    "GameEvent"
 ]
